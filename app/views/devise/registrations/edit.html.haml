@@ -1,15 +1,129 @@
-%h2
-  Edit #{resource_name.to_s.humanize}
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f|
-  = f.error_notification
-  = display_base_errors resource
-  = f.input :name, :autofocus => true
-  = f.input :email, :required => true
-  = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
-  = f.input :password_confirmation, :required => false
-  = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
-  = f.button :submit, 'Update', :class => 'btn-primary'
-%h3 Cancel my account
-%p
-  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}.
-= link_to "Back", :back
+.page-content
+  .row
+    %form.form-horizontal
+      .tabbable
+        %ul.nav.nav-tabs.padding-16
+          %li.active
+            %a{"data-toggle" => "tab", href: "#edit-basic"}
+              %i.green.icon-edit.bigger-125
+              Basic Info
+          %li
+            %a{"data-toggle" => "tab", href: "#edit-contact"}
+              %i.purple.icon-envelope.bigger-125
+              Contact
+          %li
+            %a{"data-toggle" => "tab", href: "#edit-social"}
+              %i.blue.icon-facebook.bigger-125
+              Social
+          %li
+            %a{"data-toggle" => "tab", href: "#edit-password"}
+              %i.red.icon-key.bigger-125
+              Password
+        .tab-content.profile-edit-tab-content
+          #edit-basic.tab-pane.active
+            %h4.header.blue.bolder.smaller General
+            .row
+              .col-xs-12.col-sm-4
+                .ace-file-input.ace-file-multiple
+                  %input{type: "file"}/
+                  %label.file-label{"data-title" => "Change avatar"}
+                    %span.file-name{"data-title" => "No File ..."}
+                      %i.icon-picture
+                  %a.remove{href: "#"}
+                    %i.icon-remove
+              .vspace-xs
+              .col-xs-12.col-sm-8
+                .form-group
+                  %label.col-sm-4.control-label.no-padding-right{for: "form-field-username"} Username
+                  .col-sm-8
+                    %input#form-field-username.col-xs-12.col-sm-10{placeholder: "Username", type: "text", value: "alexdoe"}/
+                .space-4
+                .form-group
+                  %label.col-sm-4.control-label.no-padding-right{for: "form-field-first"} Name
+                  .col-sm-8
+                    %input#form-field-first.input-small{placeholder: "First Name", type: "text", value: "Alex"}/
+                    %input#form-field-last.input-small{placeholder: "Last Name", type: "text", value: "Doe"}/
+            %hr/
+            .form-group
+              %label.col-sm-3.control-label.no-padding-right{for: "form-field-date"} Birth Date
+              .col-sm-9
+                .input-medium
+                  .input-group
+                    %input#form-field-date.input-medium.date-picker{"data-date-format" => "dd-mm-yyyy", placeholder: "dd-mm-yyyy", type: "text"}/
+                    %span.input-group-addon
+                      %i.icon-calendar
+            .space-4
+            .form-group
+              %label.col-sm-3.control-label.no-padding-right{for: "form-field-comment"} Comment
+              .col-sm-9
+                %textarea#form-field-comment
+          #edit-contact.tab-pane
+            %h4.header.blue.bolder.smaller Contact
+            .form-group
+              %label.col-sm-3.control-label.no-padding-right{for: "form-field-email"} Email
+              .col-sm-9
+                %span.input-icon.input-icon-right
+                  %input#form-field-email{type: "email", value: "alexdoe@gmail.com"}/
+                  %i.icon-envelope
+            .space-4
+            .form-group
+              %label.col-sm-3.control-label.no-padding-right{for: "form-field-website"} Website
+              .col-sm-9
+                %span.input-icon.input-icon-right
+                  %input#form-field-website{type: "url", value: "http://www.alexdoe.com/"}/
+                  %i.icon-globe
+            .space-4
+            .form-group
+              %label.col-sm-3.control-label.no-padding-right{for: "form-field-phone"} Phone
+              .col-sm-9
+                %span.input-icon.input-icon-right
+                  %input#form-field-phone.input-medium.input-mask-phone{type: "text"}/
+                  %i.icon-phone.icon-flip-horizontal
+            .space
+          #edit-social.tab-pane            
+            %h4.header.blue.bolder.smaller Social
+            .space
+            .form-group
+              %label.col-sm-3.control-label.no-padding-right{for: "form-field-facebook"} Facebook
+              .col-sm-9
+                %span.input-icon
+                  %input#form-field-facebook{type: "text", value: "facebook_alexdoe"}/
+                  %i.icon-facebook.blue
+            .space-4
+            .form-group
+              %label.col-sm-3.control-label.no-padding-right{for: "form-field-twitter"} Twitter
+              .col-sm-9
+                %span.input-icon
+                  %input#form-field-twitter{type: "text", value: "twitter_alexdoe"}/
+                  %i.icon-twitter.light-blue
+            .space-4
+            .form-group
+              %label.col-sm-3.control-label.no-padding-right{for: "form-field-gplus"} Google+
+              .col-sm-9
+                %span.input-icon
+                  %input#form-field-gplus{type: "text", value: "google_alexdoe"}/
+                  %i.icon-google-plus.red
+          #edit-password.tab-pane
+            %h4.header.blue.bolder.smaller Password
+            .space
+            .space-10
+            .form-group
+              %label.col-sm-3.control-label.no-padding-right{for: "form-field-pass1"} New Password
+              .col-sm-9
+                %input#form-field-pass1{type: "password"}/
+            .space-4
+            .form-group
+              %label.col-sm-3.control-label.no-padding-right{for: "form-field-pass2"} Confirm Password
+              .col-sm-9
+                %input#form-field-pass2{type: "password"}/
+      .clearfix.form-actions
+        .col-md-offset-3.col-md-9
+          %button.btn.btn-info{type: "button"}
+            %i.icon-ok.bigger-110
+            Save
+          \   
+          %button.btn{type: "reset"}
+            %i.icon-undo.bigger-110
+            Reset
+  
+  

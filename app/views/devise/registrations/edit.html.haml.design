@@ -1,0 +1,1121 @@
+.page-content
+  .page-header
+    %h1
+      User Profile Page
+      %small
+        %i.icon-double-angle-right
+        3 styles with inline editable feature
+  / /.page-header
+  .row
+    .col-xs-12
+      / PAGE CONTENT BEGINS
+      .clearfix
+        .pull-left.alert.alert-success.no-margin
+          %button.close{"data-dismiss" => "alert", type: "button"}
+            %i.icon-remove
+          %i.icon-umbrella.bigger-120.blue
+          Click on the image below or on profile fields to edit them ...
+        .pull-right
+          %span.green.middle.bolder Choose profile:  
+          .btn-toolbar.inline.middle.no-margin
+            .btn-group.no-margin{"data-toggle" => "buttons"}
+              %label.btn.btn-sm.btn-yellow.active
+                %span.bigger-110 1
+                %input{type: "radio", value: "1"}/
+              %label.btn.btn-sm.btn-yellow
+                %span.bigger-110 2
+                %input{type: "radio", value: "2"}/
+              %label.btn.btn-sm.btn-yellow
+                %span.bigger-110 3
+                %input{type: "radio", value: "3"}/
+      .hr.dotted
+      %div
+        #user-profile-1.user-profile.row
+          .col-xs-12.col-sm-3.center
+            %div
+              %span.profile-picture
+                %img#avatar.editable.img-responsive.editable-click.editable-empty.editable-open{alt: "Alex's Avatar", src: "assets/avatars/profile-pic.jpg", style: "display: none;"}/
+                %span.editable-container.editable-inline
+                  %div
+                    .editableform-loading{style: "display: none;"}
+                      %i.light-blue.icon-2x.icon-spinner.icon-spin
+                    %form.form-inline.editableform{style: ""}
+                      .control-group
+                        %div
+                          .editable-input.editable-image
+                            %span
+                              %input{name: "avatar-hidden", type: "hidden", value: ""}/
+                            %span
+                              .ace-file-input.ace-file-multiple{style: "width: 150px;"}
+                                %input{name: "avatar", type: "file"}/
+                                %label.file-label{"data-title" => "Change Avatar"}
+                                  %span.file-name{"data-title" => "No File ..."}
+                                    %i.icon-picture
+                                %a.remove{href: "#"}
+                                  %i.icon-remove
+                          .editable-buttons
+                            %button.btn.btn-info.editable-submit{type: "submit"}
+                              %i.icon-ok.icon-white
+                            %button.btn.editable-cancel{type: "button"}
+                              %i.icon-remove
+                        .editable-error-block.help-block{style: "display: none;"}
+              .space-4
+              .width-80.label.label-info.label-xlg.arrowed-in.arrowed-in-right
+                .inline.position-relative
+                  %a.user-title-label.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                    %i.icon-circle.light-green.middle
+                     
+                    %span.white Alex M. Doe
+                  %ul.align-left.dropdown-menu.dropdown-caret.dropdown-lighter
+                    %li.dropdown-header Change Status
+                    %li
+                      %a{href: "#"}
+                        %i.icon-circle.green
+                         
+                        %span.green Available
+                    %li
+                      %a{href: "#"}
+                        %i.icon-circle.red
+                         
+                        %span.red Busy
+                    %li
+                      %a{href: "#"}
+                        %i.icon-circle.grey
+                         
+                        %span.grey Invisible
+            .space-6
+            .profile-contact-info
+              .profile-contact-links.align-left
+                %a.btn.btn-link{href: "#"}
+                  %i.icon-plus-sign.bigger-120.green
+                  Add as a friend
+                %a.btn.btn-link{href: "#"}
+                  %i.icon-envelope.bigger-120.pink
+                  Send a message
+                %a.btn.btn-link{href: "#"}
+                  %i.icon-globe.bigger-125.blue
+                  www.alexdoe.com
+              .space-6
+              .profile-social-links.center
+                %a.tooltip-info{"data-original-title" => "Visit my Facebook", href: "#", title: ""}
+                  %i.middle.icon-facebook-sign.icon-2x.blue
+                %a.tooltip-info{"data-original-title" => "Visit my Twitter", href: "#", title: ""}
+                  %i.middle.icon-twitter-sign.icon-2x.light-blue
+                %a.tooltip-error{"data-original-title" => "Visit my Pinterest", href: "#", title: ""}
+                  %i.middle.icon-pinterest-sign.icon-2x.red
+            .hr.hr12.dotted
+            .clearfix
+              .grid2
+                %span.bigger-175.blue 25
+                %br/
+                Followers
+              .grid2
+                %span.bigger-175.blue 12
+                %br/
+                Following
+            .hr.hr16.dotted
+          .col-xs-12.col-sm-9
+            .center
+              %span.btn.btn-app.btn-sm.btn-light.no-hover
+                %span.line-height-1.bigger-170.blue 1,411
+                %br/
+                %span.line-height-1.smaller-90 Views
+              %span.btn.btn-app.btn-sm.btn-yellow.no-hover
+                %span.line-height-1.bigger-170 32
+                %br/
+                %span.line-height-1.smaller-90 Followers
+              %span.btn.btn-app.btn-sm.btn-pink.no-hover
+                %span.line-height-1.bigger-170 4
+                %br/
+                %span.line-height-1.smaller-90 Projects
+              %span.btn.btn-app.btn-sm.btn-grey.no-hover
+                %span.line-height-1.bigger-170 23
+                %br/
+                %span.line-height-1.smaller-90 Reviews
+              %span.btn.btn-app.btn-sm.btn-success.no-hover
+                %span.line-height-1.bigger-170 7
+                %br/
+                %span.line-height-1.smaller-90 Albums
+              %span.btn.btn-app.btn-sm.btn-primary.no-hover
+                %span.line-height-1.bigger-170 55
+                %br/
+                %span.line-height-1.smaller-90 Contacts
+            .space-12
+            .profile-user-info.profile-user-info-striped
+              .profile-info-row
+                .profile-info-name Username
+                .profile-info-value
+                  %span#username.editable.editable-click alexdoe
+              .profile-info-row
+                .profile-info-name Location
+                .profile-info-value
+                  %i.icon-map-marker.light-orange.bigger-110
+                  %span#country.editable.editable-click Netherlands
+                  %span#city.editable.editable-click Amsterdam
+              .profile-info-row
+                .profile-info-name Age
+                .profile-info-value
+                  %span#age.editable.editable-click 38
+              .profile-info-row
+                .profile-info-name Joined
+                .profile-info-value
+                  %span#signup.editable.editable-click 20/06/2010
+              .profile-info-row
+                .profile-info-name Last Online
+                .profile-info-value
+                  %span#login.editable.editable-click 3 hours ago
+              .profile-info-row
+                .profile-info-name About Me
+                .profile-info-value
+                  %span#about.editable.editable-click Editable as WYSIWYG
+            .space-20
+            .widget-box.transparent
+              .widget-header.widget-header-small
+                %h4.blue.smaller
+                  %i.icon-rss.orange
+                  Recent Activities
+                .widget-toolbar.action-buttons
+                  %a{"data-action" => "reload", href: "#"}
+                    %i.icon-refresh.blue
+                   
+                  %a.pink{href: "#"}
+                    %i.icon-trash
+              .widget-body
+                .widget-main.padding-8
+                  .slimScrollDiv{style: "position: relative; overflow: hidden; width: auto; height: 250px;"}
+                    #profile-feed-1.profile-feed{style: "overflow: hidden; width: auto; height: 250px;"}
+                      .profile-activity.clearfix
+                        %div
+                          %img.pull-left{alt: "Alex Doe's avatar", src: "assets/avatars/avatar5.png"}/
+                          %a.user{href: "#"} Alex Doe
+                          changed his profile photo.
+                          %a{href: "#"} Take a look
+                          .time
+                            %i.icon-time.bigger-110
+                            an hour ago
+                        .tools.action-buttons
+                          %a.blue{href: "#"}
+                            %i.icon-pencil.bigger-125
+                          %a.red{href: "#"}
+                            %i.icon-remove.bigger-125
+                      .profile-activity.clearfix
+                        %div
+                          %img.pull-left{alt: "Susan Smith's avatar", src: "assets/avatars/avatar1.png"}/
+                          %a.user{href: "#"} Susan Smith
+                          is now friends with Alex Doe.
+                          .time
+                            %i.icon-time.bigger-110
+                            2 hours ago
+                        .tools.action-buttons
+                          %a.blue{href: "#"}
+                            %i.icon-pencil.bigger-125
+                          %a.red{href: "#"}
+                            %i.icon-remove.bigger-125
+                      .profile-activity.clearfix
+                        %div
+                          %i.pull-left.thumbicon.icon-ok.btn-success.no-hover
+                          %a.user{href: "#"} Alex Doe
+                          joined
+                          %a{href: "#"} Country Music
+                          group.
+                          .time
+                            %i.icon-time.bigger-110
+                            5 hours ago
+                        .tools.action-buttons
+                          %a.blue{href: "#"}
+                            %i.icon-pencil.bigger-125
+                          %a.red{href: "#"}
+                            %i.icon-remove.bigger-125
+                      .profile-activity.clearfix
+                        %div
+                          %i.pull-left.thumbicon.icon-picture.btn-info.no-hover
+                          %a.user{href: "#"} Alex Doe
+                          uploaded a new photo.
+                          %a{href: "#"} Take a look
+                          .time
+                            %i.icon-time.bigger-110
+                            5 hours ago
+                        .tools.action-buttons
+                          %a.blue{href: "#"}
+                            %i.icon-pencil.bigger-125
+                          %a.red{href: "#"}
+                            %i.icon-remove.bigger-125
+                      .profile-activity.clearfix
+                        %div
+                          %img.pull-left{alt: "David Palms's avatar", src: "assets/avatars/avatar4.png"}/
+                          %a.user{href: "#"} David Palms
+                          left a comment on Alex's wall.
+                          .time
+                            %i.icon-time.bigger-110
+                            8 hours ago
+                        .tools.action-buttons
+                          %a.blue{href: "#"}
+                            %i.icon-pencil.bigger-125
+                          %a.red{href: "#"}
+                            %i.icon-remove.bigger-125
+                      .profile-activity.clearfix
+                        %div
+                          %i.pull-left.thumbicon.icon-edit.btn-pink.no-hover
+                          %a.user{href: "#"} Alex Doe
+                          published a new blog post.
+                          %a{href: "#"} Read now
+                          .time
+                            %i.icon-time.bigger-110
+                            11 hours ago
+                        .tools.action-buttons
+                          %a.blue{href: "#"}
+                            %i.icon-pencil.bigger-125
+                          %a.red{href: "#"}
+                            %i.icon-remove.bigger-125
+                      .profile-activity.clearfix
+                        %div
+                          %img.pull-left{alt: "Alex Doe's avatar", src: "assets/avatars/avatar5.png"}/
+                          %a.user{href: "#"} Alex Doe
+                          upgraded his skills.
+                          .time
+                            %i.icon-time.bigger-110
+                            12 hours ago
+                        .tools.action-buttons
+                          %a.blue{href: "#"}
+                            %i.icon-pencil.bigger-125
+                          %a.red{href: "#"}
+                            %i.icon-remove.bigger-125
+                      .profile-activity.clearfix
+                        %div
+                          %i.pull-left.thumbicon.icon-key.btn-info.no-hover
+                          %a.user{href: "#"} Alex Doe
+                          logged in.
+                          .time
+                            %i.icon-time.bigger-110
+                            12 hours ago
+                        .tools.action-buttons
+                          %a.blue{href: "#"}
+                            %i.icon-pencil.bigger-125
+                          %a.red{href: "#"}
+                            %i.icon-remove.bigger-125
+                      .profile-activity.clearfix
+                        %div
+                          %i.pull-left.thumbicon.icon-off.btn-inverse.no-hover
+                          %a.user{href: "#"} Alex Doe
+                          logged out.
+                          .time
+                            %i.icon-time.bigger-110
+                            16 hours ago
+                        .tools.action-buttons
+                          %a.blue{href: "#"}
+                            %i.icon-pencil.bigger-125
+                          %a.red{href: "#"}
+                            %i.icon-remove.bigger-125
+                      .profile-activity.clearfix
+                        %div
+                          %i.pull-left.thumbicon.icon-key.btn-info.no-hover
+                          %a.user{href: "#"} Alex Doe
+                          logged in.
+                          .time
+                            %i.icon-time.bigger-110
+                            16 hours ago
+                        .tools.action-buttons
+                          %a.blue{href: "#"}
+                            %i.icon-pencil.bigger-125
+                          %a.red{href: "#"}
+                            %i.icon-remove.bigger-125
+                    .slimScrollBar.ui-draggable{style: "background-color: rgb(0, 0, 0); width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; height: 99.04912836767036px; background-position: initial initial; background-repeat: initial initial;"}
+                    .slimScrollRail{style: "width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; background-color: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px; background-position: initial initial; background-repeat: initial initial;"}
+            .hr.hr2.hr-double
+            .space-6
+            .center
+              %a.btn.btn-sm.btn-primary{href: "#"}
+                %i.icon-rss.bigger-150.middle
+                %span.bigger-110 View more activities
+                %i.icon-on-right.icon-arrow-right
+      .hide
+        #user-profile-2.user-profile
+          .tabbable
+            %ul.nav.nav-tabs.padding-18
+              %li.active
+                %a{"data-toggle" => "tab", href: "#home"}
+                  %i.green.icon-user.bigger-120
+                  Profile
+              %li
+                %a{"data-toggle" => "tab", href: "#feed"}
+                  %i.orange.icon-rss.bigger-120
+                  Activity Feed
+              %li
+                %a{"data-toggle" => "tab", href: "#friends"}
+                  %i.blue.icon-group.bigger-120
+                  Friends
+              %li
+                %a{"data-toggle" => "tab", href: "#pictures"}
+                  %i.pink.icon-picture.bigger-120
+                  Pictures
+            .tab-content.no-border.padding-24
+              #home.tab-pane.in.active
+                .row
+                  .col-xs-12.col-sm-3.center
+                    %span.profile-picture
+                      %img#avatar2.editable.img-responsive{alt: "Alex's Avatar", src: "assets/avatars/profile-pic.jpg"}/
+                    .space.space-4
+                    %a.btn.btn-sm.btn-block.btn-success{href: "#"}
+                      %i.icon-plus-sign.bigger-120
+                      %span.bigger-110 Add as a friend
+                    %a.btn.btn-sm.btn-block.btn-primary{href: "#"}
+                      %i.icon-envelope-alt.bigger-110
+                      %span.bigger-110 Send a message
+                  / /span
+                  .col-xs-12.col-sm-9
+                    %h4.blue
+                      %span.middle Alex M. Doe
+                      %span.label.label-purple.arrowed-in-right
+                        %i.icon-circle.smaller-80.align-middle
+                        online
+                    .profile-user-info
+                      .profile-info-row
+                        .profile-info-name Username
+                        .profile-info-value
+                          %span alexdoe
+                      .profile-info-row
+                        .profile-info-name Location
+                        .profile-info-value
+                          %i.icon-map-marker.light-orange.bigger-110
+                          %span Netherlands
+                          %span Amsterdam
+                      .profile-info-row
+                        .profile-info-name Age
+                        .profile-info-value
+                          %span 38
+                      .profile-info-row
+                        .profile-info-name Joined
+                        .profile-info-value
+                          %span 20/06/2010
+                      .profile-info-row
+                        .profile-info-name Last Online
+                        .profile-info-value
+                          %span 3 hours ago
+                    .hr.hr-8.dotted
+                    .profile-user-info
+                      .profile-info-row
+                        .profile-info-name Website
+                        .profile-info-value
+                          %a{href: "#", target: "_blank"} www.alexdoe.com
+                      .profile-info-row
+                        .profile-info-name
+                          %i.middle.icon-facebook-sign.bigger-150.blue
+                        .profile-info-value
+                          %a{href: "#"} Find me on Facebook
+                      .profile-info-row
+                        .profile-info-name
+                          %i.middle.icon-twitter-sign.bigger-150.light-blue
+                        .profile-info-value
+                          %a{href: "#"} Follow me on Twitter
+                  / /span
+                / /row-fluid
+                .space-20
+                .row
+                  .col-xs-12.col-sm-6
+                    .widget-box.transparent
+                      .widget-header.widget-header-small
+                        %h4.smaller
+                          %i.icon-check.bigger-110
+                          Little About Me
+                      .widget-body
+                        .widget-main
+                          %p
+                            My job is mostly lorem ipsuming and dolor sit ameting as long as consectetur adipiscing elit.
+                          %p
+                            Sometimes quisque commodo massa gets in the way and sed ipsum porttitor facilisis.
+                          %p
+                            The best thing about my job is that vestibulum id ligula porta felis euismod and nullam quis risus eget urna mollis ornare.
+                          %p
+                            Thanks for visiting my profile.
+                  .col-xs-12.col-sm-6
+                    .widget-box.transparent
+                      .widget-header.widget-header-small.header-color-blue2
+                        %h4.smaller
+                          %i.icon-lightbulb.bigger-120
+                          My Skills
+                      .widget-body
+                        .widget-main.padding-16
+                          .clearfix
+                            .grid3.center
+                              .easy-pie-chart.percentage.easyPieChart{"data-color" => "#CA5952", "data-percent" => "45", style: "width: 72px; height: 72px; line-height: 72px; color: rgb(202, 89, 82);"}
+                                %span.percent> 45
+                                \%
+                                %canvas{height: "72", width: "72"}
+                              .space-2
+                              Graphic Design
+                            .grid3.center
+                              .center.easy-pie-chart.percentage.easyPieChart{"data-color" => "#59A84B", "data-percent" => "90", style: "width: 72px; height: 72px; line-height: 72px; color: rgb(89, 168, 75);"}
+                                %span.percent> 90
+                                \%
+                                %canvas{height: "72", width: "72"}
+                              .space-2
+                              HTML5 & CSS3
+                            .grid3.center
+                              .center.easy-pie-chart.percentage.easyPieChart{"data-color" => "#9585BF", "data-percent" => "80", style: "width: 72px; height: 72px; line-height: 72px; color: rgb(149, 133, 191);"}
+                                %span.percent> 80
+                                \%
+                                %canvas{height: "72", width: "72"}
+                              .space-2
+                              Javascript/jQuery
+                          .hr.hr-16
+                          .profile-skills
+                            .progress
+                              .progress-bar{style: "width:80%"}
+                                %span.pull-left HTML5 & CSS3
+                                %span.pull-right 80%
+                            .progress
+                              .progress-bar.progress-bar-success{style: "width:72%"}
+                                %span.pull-left Javascript & jQuery
+                                %span.pull-right 72%
+                            .progress
+                              .progress-bar.progress-bar-purple{style: "width:70%"}
+                                %span.pull-left PHP & MySQL
+                                %span.pull-right 70%
+                            .progress
+                              .progress-bar.progress-bar-warning{style: "width:50%"}
+                                %span.pull-left Wordpress
+                                %span.pull-right 50%
+                            .progress
+                              .progress-bar.progress-bar-danger{style: "width:35%"}
+                                %span.pull-left Photoshop
+                                %span.pull-right 35%
+              / #home
+              #feed.tab-pane
+                .profile-feed.row-fluid
+                  .span6
+                    .profile-activity.clearfix
+                      %div
+                        %img.pull-left{alt: "Alex Doe's avatar", src: "assets/avatars/avatar5.png"}/
+                        %a.user{href: "#"} Alex Doe
+                        changed his profile photo.
+                        %a{href: "#"} Take a look
+                        .time
+                          %i.icon-time.bigger-110
+                          an hour ago
+                      .tools.action-buttons
+                        %a.blue{href: "#"}
+                          %i.icon-pencil.bigger-125
+                        %a.red{href: "#"}
+                          %i.icon-remove.bigger-125
+                    .profile-activity.clearfix
+                      %div
+                        %img.pull-left{alt: "Susan Smith's avatar", src: "assets/avatars/avatar1.png"}/
+                        %a.user{href: "#"} Susan Smith
+                        is now friends with Alex Doe.
+                        .time
+                          %i.icon-time.bigger-110
+                          2 hours ago
+                      .tools.action-buttons
+                        %a.blue{href: "#"}
+                          %i.icon-pencil.bigger-125
+                        %a.red{href: "#"}
+                          %i.icon-remove.bigger-125
+                    .profile-activity.clearfix
+                      %div
+                        %i.pull-left.thumbicon.icon-ok.btn-success.no-hover
+                        %a.user{href: "#"} Alex Doe
+                        joined
+                        %a{href: "#"} Country Music
+                        group.
+                        .time
+                          %i.icon-time.bigger-110
+                          5 hours ago
+                      .tools.action-buttons
+                        %a.blue{href: "#"}
+                          %i.icon-pencil.bigger-125
+                        %a.red{href: "#"}
+                          %i.icon-remove.bigger-125
+                    .profile-activity.clearfix
+                      %div
+                        %i.pull-left.thumbicon.icon-picture.btn-info.no-hover
+                        %a.user{href: "#"} Alex Doe
+                        uploaded a new photo.
+                        %a{href: "#"} Take a look
+                        .time
+                          %i.icon-time.bigger-110
+                          5 hours ago
+                      .tools.action-buttons
+                        %a.blue{href: "#"}
+                          %i.icon-pencil.bigger-125
+                        %a.red{href: "#"}
+                          %i.icon-remove.bigger-125
+                    .profile-activity.clearfix
+                      %div
+                        %img.pull-left{alt: "David Palms's avatar", src: "assets/avatars/avatar4.png"}/
+                        %a.user{href: "#"} David Palms
+                        left a comment on Alex's wall.
+                        .time
+                          %i.icon-time.bigger-110
+                          8 hours ago
+                      .tools.action-buttons
+                        %a.blue{href: "#"}
+                          %i.icon-pencil.bigger-125
+                        %a.red{href: "#"}
+                          %i.icon-remove.bigger-125
+                  / /span
+                  .span6
+                    .profile-activity.clearfix
+                      %div
+                        %i.pull-left.thumbicon.icon-edit.btn-pink.no-hover
+                        %a.user{href: "#"} Alex Doe
+                        published a new blog post.
+                        %a{href: "#"} Read now
+                        .time
+                          %i.icon-time.bigger-110
+                          11 hours ago
+                      .tools.action-buttons
+                        %a.blue{href: "#"}
+                          %i.icon-pencil.bigger-125
+                        %a.red{href: "#"}
+                          %i.icon-remove.bigger-125
+                    .profile-activity.clearfix
+                      %div
+                        %img.pull-left{alt: "Alex Doe's avatar", src: "assets/avatars/avatar5.png"}/
+                        %a.user{href: "#"} Alex Doe
+                        upgraded his skills.
+                        .time
+                          %i.icon-time.bigger-110
+                          12 hours ago
+                      .tools.action-buttons
+                        %a.blue{href: "#"}
+                          %i.icon-pencil.bigger-125
+                        %a.red{href: "#"}
+                          %i.icon-remove.bigger-125
+                    .profile-activity.clearfix
+                      %div
+                        %i.pull-left.thumbicon.icon-key.btn-info.no-hover
+                        %a.user{href: "#"} Alex Doe
+                        logged in.
+                        .time
+                          %i.icon-time.bigger-110
+                          12 hours ago
+                      .tools.action-buttons
+                        %a.blue{href: "#"}
+                          %i.icon-pencil.bigger-125
+                        %a.red{href: "#"}
+                          %i.icon-remove.bigger-125
+                    .profile-activity.clearfix
+                      %div
+                        %i.pull-left.thumbicon.icon-off.btn-inverse.no-hover
+                        %a.user{href: "#"} Alex Doe
+                        logged out.
+                        .time
+                          %i.icon-time.bigger-110
+                          16 hours ago
+                      .tools.action-buttons
+                        %a.blue{href: "#"}
+                          %i.icon-pencil.bigger-125
+                        %a.red{href: "#"}
+                          %i.icon-remove.bigger-125
+                    .profile-activity.clearfix
+                      %div
+                        %i.pull-left.thumbicon.icon-key.btn-info.no-hover
+                        %a.user{href: "#"} Alex Doe
+                        logged in.
+                        .time
+                          %i.icon-time.bigger-110
+                          16 hours ago
+                      .tools.action-buttons
+                        %a.blue{href: "#"}
+                          %i.icon-pencil.bigger-125
+                        %a.red{href: "#"}
+                          %i.icon-remove.bigger-125
+                  / /span
+                / /row
+                .space-12
+                .center
+                  %a.btn.btn-small.btn-primary{href: "#"}
+                    %i.icon-rss.bigger-150.middle
+                    View more activities
+                    %i.icon-on-right.icon-arrow-right
+              / /#feed
+              #friends.tab-pane
+                .profile-users.clearfix
+                  .itemdiv.memberdiv
+                    .inline.position-relative
+                      .user
+                        %a{href: "#"}
+                          %img{alt: "Bob Doe's avatar", src: "assets/avatars/avatar4.png"}/
+                      .body
+                        .name
+                          %a{href: "#"}
+                            %span.user-status.status-online
+                            Bob Doe
+                      .popover
+                        .arrow
+                        .popover-content
+                          .bolder Content Editor
+                          .time
+                            %i.icon-time.middle.bigger-120.orange
+                            %span.green 20 mins ago
+                          .hr.dotted.hr-8
+                          .tools.action-buttons
+                            %a{href: "#"}
+                              %i.icon-facebook-sign.blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-twitter-sign.light-blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-google-plus-sign.red.bigger-150
+                  .itemdiv.memberdiv
+                    .inline.position-relative
+                      .user
+                        %a{href: "#"}
+                          %img{alt: "Rose Doe's avatar", src: "assets/avatars/avatar1.png"}/
+                      .body
+                        .name
+                          %a{href: "#"}
+                            %span.user-status.status-offline
+                            Rose Doe
+                      .popover
+                        .arrow
+                        .popover-content
+                          .bolder Graphic Designer
+                          .time
+                            %i.icon-time.middle.bigger-120.grey
+                            %span.grey 30 min ago
+                          .hr.dotted.hr-8
+                          .tools.action-buttons
+                            %a{href: "#"}
+                              %i.icon-facebook-sign.blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-twitter-sign.light-blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-google-plus-sign.red.bigger-150
+                  .itemdiv.memberdiv
+                    .inline.position-relative
+                      .user
+                        %a{href: "#"}
+                          %img{alt: "Jim Doe's avatar", src: "assets/avatars/avatar.png"}/
+                      .body
+                        .name
+                          %a{href: "#"}
+                            %span.user-status.status-busy
+                            Jim Doe
+                      .popover
+                        .arrow
+                        .popover-content
+                          .bolder SEO & Advertising
+                          .time
+                            %i.icon-time.middle.bigger-120.red
+                            %span.grey 1 hour ago
+                          .hr.dotted.hr-8
+                          .tools.action-buttons
+                            %a{href: "#"}
+                              %i.icon-facebook-sign.blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-twitter-sign.light-blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-google-plus-sign.red.bigger-150
+                  .itemdiv.memberdiv
+                    .inline.position-relative
+                      .user
+                        %a{href: "#"}
+                          %img{alt: "Alex Doe's avatar", src: "assets/avatars/avatar5.png"}/
+                      .body
+                        .name
+                          %a{href: "#"}
+                            %span.user-status.status-idle
+                            Alex Doe
+                      .popover
+                        .arrow
+                        .popover-content
+                          .bolder Marketing
+                          .time
+                            %i.icon-time.middle.bigger-120.orange
+                            %span 40 minutes idle
+                          .hr.dotted.hr-8
+                          .tools.action-buttons
+                            %a{href: "#"}
+                              %i.icon-facebook-sign.blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-twitter-sign.light-blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-google-plus-sign.red.bigger-150
+                  .itemdiv.memberdiv
+                    .inline.position-relative
+                      .user
+                        %a{href: "#"}
+                          %img{alt: "Phil Doe's avatar", src: "assets/avatars/avatar2.png"}/
+                      .body
+                        .name
+                          %a{href: "#"}
+                            %span.user-status.status-online
+                            Phil Doe
+                      .popover
+                        .arrow
+                        .popover-content
+                          .bolder Public Relations
+                          .time
+                            %i.icon-time.middle.bigger-120.orange
+                            %span.green 2 hours ago
+                          .hr.dotted.hr-8
+                          .tools.action-buttons
+                            %a{href: "#"}
+                              %i.icon-facebook-sign.blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-twitter-sign.light-blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-google-plus-sign.red.bigger-150
+                  .itemdiv.memberdiv
+                    .inline.position-relative
+                      .user
+                        %a{href: "#"}
+                          %img{alt: "Susan Doe's avatar", src: "assets/avatars/avatar3.png"}/
+                      .body
+                        .name
+                          %a{href: "#"}
+                            %span.user-status.status-online
+                            Susan Doe
+                      .popover
+                        .arrow
+                        .popover-content
+                          .bolder HR Management
+                          .time
+                            %i.icon-time.middle.bigger-120.orange
+                            %span.green 20 mins ago
+                          .hr.dotted.hr-8
+                          .tools.action-buttons
+                            %a{href: "#"}
+                              %i.icon-facebook-sign.blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-twitter-sign.light-blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-google-plus-sign.red.bigger-150
+                  .itemdiv.memberdiv
+                    .inline.position-relative
+                      .user
+                        %a{href: "#"}
+                          %img{alt: "Jennifer Doe's avatar", src: "assets/avatars/avatar1.png"}/
+                      .body
+                        .name
+                          %a{href: "#"}
+                            %span.user-status.status-offline
+                            Jennifer Doe
+                      .popover
+                        .arrow
+                        .popover-content
+                          .bolder Graphic Designer
+                          .time
+                            %i.icon-time.middle.bigger-120.grey
+                            %span.grey 2 hours ago
+                          .hr.dotted.hr-8
+                          .tools.action-buttons
+                            %a{href: "#"}
+                              %i.icon-facebook-sign.blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-twitter-sign.light-blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-google-plus-sign.red.bigger-150
+                  .itemdiv.memberdiv
+                    .inline.position-relative
+                      .user
+                        %a{href: "#"}
+                          %img{alt: "Alexa Doe's avatar", src: "assets/avatars/avatar3.png"}/
+                      .body
+                        .name
+                          %a{href: "#"}
+                            %span.user-status.status-offline
+                            Alexa Doe
+                      .popover
+                        .arrow
+                        .popover-content
+                          .bolder Accounting
+                          .time
+                            %i.icon-time.middle.bigger-120.grey
+                            %span.grey 4 hours ago
+                          .hr.dotted.hr-8
+                          .tools.action-buttons
+                            %a{href: "#"}
+                              %i.icon-facebook-sign.blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-twitter-sign.light-blue.bigger-150
+                            %a{href: "#"}
+                              %i.icon-google-plus-sign.red.bigger-150
+                .hr.hr10.hr-double
+                %ul.pager.pull-right
+                  %li.previous.disabled
+                    %a{href: "#"} ← Prev
+                  %li.next
+                    %a{href: "#"} Next →
+              / /#friends
+              #pictures.tab-pane
+                %ul.ace-thumbnails
+                  %li
+                    %a{"data-rel" => "colorbox", href: "#"}
+                      %img{alt: "150x150", src: "assets/images/gallery/thumb-1.jpg"}/
+                      .text
+                        .inner Sample Caption on Hover
+                    .tools.tools-bottom
+                      %a{href: "#"}
+                        %i.icon-link
+                      %a{href: "#"}
+                        %i.icon-paper-clip
+                      %a{href: "#"}
+                        %i.icon-pencil
+                      %a{href: "#"}
+                        %i.icon-remove.red
+                  %li
+                    %a{"data-rel" => "colorbox", href: "#"}
+                      %img{alt: "150x150", src: "assets/images/gallery/thumb-2.jpg"}/
+                      .text
+                        .inner Sample Caption on Hover
+                    .tools.tools-bottom
+                      %a{href: "#"}
+                        %i.icon-link
+                      %a{href: "#"}
+                        %i.icon-paper-clip
+                      %a{href: "#"}
+                        %i.icon-pencil
+                      %a{href: "#"}
+                        %i.icon-remove.red
+                  %li
+                    %a{"data-rel" => "colorbox", href: "#"}
+                      %img{alt: "150x150", src: "assets/images/gallery/thumb-3.jpg"}/
+                      .text
+                        .inner Sample Caption on Hover
+                    .tools.tools-bottom
+                      %a{href: "#"}
+                        %i.icon-link
+                      %a{href: "#"}
+                        %i.icon-paper-clip
+                      %a{href: "#"}
+                        %i.icon-pencil
+                      %a{href: "#"}
+                        %i.icon-remove.red
+                  %li
+                    %a{"data-rel" => "colorbox", href: "#"}
+                      %img{alt: "150x150", src: "assets/images/gallery/thumb-4.jpg"}/
+                      .text
+                        .inner Sample Caption on Hover
+                    .tools.tools-bottom
+                      %a{href: "#"}
+                        %i.icon-link
+                      %a{href: "#"}
+                        %i.icon-paper-clip
+                      %a{href: "#"}
+                        %i.icon-pencil
+                      %a{href: "#"}
+                        %i.icon-remove.red
+                  %li
+                    %a{"data-rel" => "colorbox", href: "#"}
+                      %img{alt: "150x150", src: "assets/images/gallery/thumb-5.jpg"}/
+                      .text
+                        .inner Sample Caption on Hover
+                    .tools.tools-bottom
+                      %a{href: "#"}
+                        %i.icon-link
+                      %a{href: "#"}
+                        %i.icon-paper-clip
+                      %a{href: "#"}
+                        %i.icon-pencil
+                      %a{href: "#"}
+                        %i.icon-remove.red
+                  %li
+                    %a{"data-rel" => "colorbox", href: "#"}
+                      %img{alt: "150x150", src: "assets/images/gallery/thumb-6.jpg"}/
+                      .text
+                        .inner Sample Caption on Hover
+                    .tools.tools-bottom
+                      %a{href: "#"}
+                        %i.icon-link
+                      %a{href: "#"}
+                        %i.icon-paper-clip
+                      %a{href: "#"}
+                        %i.icon-pencil
+                      %a{href: "#"}
+                        %i.icon-remove.red
+                  %li
+                    %a{"data-rel" => "colorbox", href: "#"}
+                      %img{alt: "150x150", src: "assets/images/gallery/thumb-1.jpg"}/
+                      .text
+                        .inner Sample Caption on Hover
+                    .tools.tools-bottom
+                      %a{href: "#"}
+                        %i.icon-link
+                      %a{href: "#"}
+                        %i.icon-paper-clip
+                      %a{href: "#"}
+                        %i.icon-pencil
+                      %a{href: "#"}
+                        %i.icon-remove.red
+                  %li
+                    %a{"data-rel" => "colorbox", href: "#"}
+                      %img{alt: "150x150", src: "assets/images/gallery/thumb-2.jpg"}/
+                      .text
+                        .inner Sample Caption on Hover
+                    .tools.tools-bottom
+                      %a{href: "#"}
+                        %i.icon-link
+                      %a{href: "#"}
+                        %i.icon-paper-clip
+                      %a{href: "#"}
+                        %i.icon-pencil
+                      %a{href: "#"}
+                        %i.icon-remove.red
+              / /#pictures
+      .hide
+        #user-profile-3.user-profile.row
+          .col-sm-offset-1.col-sm-10
+            .well.well-sm
+              %button.close{"data-dismiss" => "alert", type: "button"} ×
+               
+              .inline.middle.blue.bigger-110 Your profile is 70% complete
+                   
+              .inline.middle.no-margin.progress.progress-striped.active{"data-percent" => "70%", style: "width:200px;"}
+                .progress-bar.progress-bar-success{style: "width:70%"}
+            / /well
+            .space
+            %form.form-horizontal
+              .tabbable
+                %ul.nav.nav-tabs.padding-16
+                  %li.active
+                    %a{"data-toggle" => "tab", href: "#edit-basic"}
+                      %i.green.icon-edit.bigger-125
+                      Basic Info
+                  %li
+                    %a{"data-toggle" => "tab", href: "#edit-settings"}
+                      %i.purple.icon-cog.bigger-125
+                      Settings
+                  %li
+                    %a{"data-toggle" => "tab", href: "#edit-password"}
+                      %i.blue.icon-key.bigger-125
+                      Password
+                .tab-content.profile-edit-tab-content
+                  #edit-basic.tab-pane.in.active
+                    %h4.header.blue.bolder.smaller General
+                    .row
+                      .col-xs-12.col-sm-4
+                        .ace-file-input.ace-file-multiple
+                          %input{type: "file"}/
+                          %label.file-label{"data-title" => "Change avatar"}
+                            %span.file-name{"data-title" => "No File ..."}
+                              %i.icon-picture
+                          %a.remove{href: "#"}
+                            %i.icon-remove
+                      .vspace-xs
+                      .col-xs-12.col-sm-8
+                        .form-group
+                          %label.col-sm-4.control-label.no-padding-right{for: "form-field-username"} Username
+                          .col-sm-8
+                            %input#form-field-username.col-xs-12.col-sm-10{placeholder: "Username", type: "text", value: "alexdoe"}/
+                        .space-4
+                        .form-group
+                          %label.col-sm-4.control-label.no-padding-right{for: "form-field-first"} Name
+                          .col-sm-8
+                            %input#form-field-first.input-small{placeholder: "First Name", type: "text", value: "Alex"}/
+                            %input#form-field-last.input-small{placeholder: "Last Name", type: "text", value: "Doe"}/
+                    %hr/
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right{for: "form-field-date"} Birth Date
+                      .col-sm-9
+                        .input-medium
+                          .input-group
+                            %input#form-field-date.input-medium.date-picker{"data-date-format" => "dd-mm-yyyy", placeholder: "dd-mm-yyyy", type: "text"}/
+                            %span.input-group-addon
+                              %i.icon-calendar
+                    .space-4
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right Gender
+                      .col-sm-9
+                        %label.inline
+                          %input.ace{name: "form-field-radio", type: "radio"}/
+                          %span.lbl Male
+                             
+                        %label.inline
+                          %input.ace{name: "form-field-radio", type: "radio"}/
+                          %span.lbl Female
+                    .space-4
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right{for: "form-field-comment"} Comment
+                      .col-sm-9
+                        %textarea#form-field-comment
+                    .space
+                    %h4.header.blue.bolder.smaller Contact
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right{for: "form-field-email"} Email
+                      .col-sm-9
+                        %span.input-icon.input-icon-right
+                          %input#form-field-email{type: "email", value: "alexdoe@gmail.com"}/
+                          %i.icon-envelope
+                    .space-4
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right{for: "form-field-website"} Website
+                      .col-sm-9
+                        %span.input-icon.input-icon-right
+                          %input#form-field-website{type: "url", value: "http://www.alexdoe.com/"}/
+                          %i.icon-globe
+                    .space-4
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right{for: "form-field-phone"} Phone
+                      .col-sm-9
+                        %span.input-icon.input-icon-right
+                          %input#form-field-phone.input-medium.input-mask-phone{type: "text"}/
+                          %i.icon-phone.icon-flip-horizontal
+                    .space
+                    %h4.header.blue.bolder.smaller Social
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right{for: "form-field-facebook"} Facebook
+                      .col-sm-9
+                        %span.input-icon
+                          %input#form-field-facebook{type: "text", value: "facebook_alexdoe"}/
+                          %i.icon-facebook.blue
+                    .space-4
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right{for: "form-field-twitter"} Twitter
+                      .col-sm-9
+                        %span.input-icon
+                          %input#form-field-twitter{type: "text", value: "twitter_alexdoe"}/
+                          %i.icon-twitter.light-blue
+                    .space-4
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right{for: "form-field-gplus"} Google+
+                      .col-sm-9
+                        %span.input-icon
+                          %input#form-field-gplus{type: "text", value: "google_alexdoe"}/
+                          %i.icon-google-plus.red
+                  #edit-settings.tab-pane
+                    .space-10
+                    %div
+                      %label.inline
+                        %input.ace{name: "form-field-checkbox", type: "checkbox"}/
+                        %span.lbl Make my profile public
+                    .space-8
+                    %div
+                      %label.inline
+                        %input.ace{name: "form-field-checkbox", type: "checkbox"}/
+                        %span.lbl Email me new updates
+                    .space-8
+                    %div
+                      %label.inline
+                        %input.ace{name: "form-field-checkbox", type: "checkbox"}/
+                        %span.lbl Keep a history of my conversations
+                      %label.inline
+                        %span.space-2.block
+                        for
+                        %input.input-mini{maxlength: "3", type: "text"}/
+                        days
+                  #edit-password.tab-pane
+                    .space-10
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right{for: "form-field-pass1"} New Password
+                      .col-sm-9
+                        %input#form-field-pass1{type: "password"}/
+                    .space-4
+                    .form-group
+                      %label.col-sm-3.control-label.no-padding-right{for: "form-field-pass2"} Confirm Password
+                      .col-sm-9
+                        %input#form-field-pass2{type: "password"}/
+              .clearfix.form-actions
+                .col-md-offset-3.col-md-9
+                  %button.btn.btn-info{type: "button"}
+                    %i.icon-ok.bigger-110
+                    Save
+                     
+                  %button.btn{type: "reset"}
+                    %i.icon-undo.bigger-110
+                    Reset
+          / /span
+        / /user-profile
+      / PAGE CONTENT ENDS
+    / /.col
+  / /.row

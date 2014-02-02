@@ -40,11 +40,12 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     ## Inputs
-    b.use :label_input
+    #b.use :input_label
+    b.use :input
     b.use :hint,  wrap_with: { tag: :span, class: :hint }
     b.use :error, wrap_with: { tag: :span, class: :error }
   end
-
+     
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :default
 
@@ -143,3 +144,4 @@ SimpleForm.setup do |config|
   # Default class for inputs
   # config.input_class = nil
 end
+

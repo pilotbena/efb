@@ -1,13 +1,44 @@
--# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top
-  .container
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        = render 'layouts/navigation_links'
+#navbar.navbar
+  :javascript
+    try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+  #navbar-container.navbar-container
+    .navbar-header.pull-left
+      %a.navbar-brand{href: root_path}
+        %small
+          %i.icon-plane.white
+          %span.white DSA
+          %span.white .efb.is
+      / /.brand
+    / /.navbar-header
+    .navbar-header.pull-right{role: "navigation"}
+      %ul.nav.ace-nav
+        %li.light-blue
+          %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            %img.nav-user-photo{alt: "Bena's Photo", src: image_path('user.jpg')}/
+            %span.user-info
+              - if current_user.present?
+                %small Welcome,
+                #{current_user.name}
+              - else
+                = link_to 'Sign in', new_user_session_path
+            %i.icon-caret-down
+          %ul.user-menu.pull-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+            %li
+              %a{href: "#"}
+                %i.icon-cog
+                Settings
+            %li
+              %a{href: edit_user_registration_path}
+                %i.icon-user
+                Profile
+            %li.divider
+            %li
+              %a{href: destroy_user_session_path, :rel => :nofollow}
+                %i.icon-off
+                Logout
+      / /.ace-nav
+    / /.navbar-header
+  / /.container
+
+        
+  

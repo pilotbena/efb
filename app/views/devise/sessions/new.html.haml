@@ -1,7 +1,52 @@
-%h2 Sign in
-= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
-  = f.input :email, :autofocus => true
-  = f.input :password
-  = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
-  = f.button :submit, "Sign in", :class => 'btn-primary'
-= render "devise/shared/links"
+.col-sm-10.col-sm-offset-1
+  .login-container
+    .center
+      %h1
+        %i.icon-plane.green
+        %span.red DSA
+        %span.grey .efb.is
+    .space-6
+    .position-relative
+      = render 'layouts/messages'
+      #login-box.login-box.visible.widget-box.no-border
+        .widget-body
+          .widget-main
+            %h4.header.blue.lighter.bigger
+              %i.icon-plane.green
+              Please enter your information
+            .space-6
+            %label.block.clearfix
+            = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f|
+              %label.block.clearfix
+                %span.block.input-icon.input-icon-right
+                  = f.input_field :email, :class => 'form-control', :autofocus => true, :label => false
+                  %i.icon-user
+              %label.block.clearfix
+                %span.block.input-icon.input-icon-right
+                  = f.input_field :password, :class => 'form-control', :label => false
+                  %i.icon-lock
+              .space
+              .clearfix
+                Remember me
+                = f.check_box :remember_me, :as => :boolean if devise_mapping.rememberable?
+                = button_tag(type: 'submit', class: "width-35 pull-right btn btn-sm btn-primary") do
+                  %i.icon-key
+                  Login
+              .space-4
+            .social-or-login.center
+              %span.bigger-110 or login using
+            .social-login.center
+              %a.btn.btn-primary
+                %i.icon-facebook
+              %a.btn.btn-danger
+                %i.icon-google-plus
+          .toolbar.clearfix
+            %div
+              %a.forgot-password-link{href: new_password_path(resource_name)}
+                %i.icon-arrow-left
+                I forgot my password
+            %div
+              %a.user-signup-link{href: new_registration_path(resource_name)}
+                I want to register
+                %i.icon-arrow-right
+

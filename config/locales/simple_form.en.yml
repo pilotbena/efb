@@ -10,6 +10,21 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
+      
+    labels:
+        defaults:
+          email: 'E-mail'
+          password: 'Password'
+          remember_me: 'Remember me'
+          name: 'User name'
+          password_confirmation: 'Password confirmation'
+    placeholders:
+        defaults:
+            email: 'E-mail'
+            password: 'Password'
+            remember_me: 'Remember me'
+            name: 'User name'
+            password_confirmation: 'Repeat password'
     # Labels and hints examples
     # labels:
     #   defaults:
